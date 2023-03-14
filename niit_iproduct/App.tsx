@@ -25,6 +25,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import HelloWorldApp from './HelloWorldApp';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -77,6 +79,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <HelloWorldApp/>
         <View style={styles.center}>
           <Text onPress={updateState}>Hello {myState}</Text>
         </View>
