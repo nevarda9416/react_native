@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, Button} from 'react-native';
 type GreetingProps = {
   name: string;
 };
@@ -16,6 +16,7 @@ const Greeting = (props: GreetingProps) => {
   )
 };
 const HelloWorldApp = () => {
+  const [count, setCount] = useState(0);
   return (
     <View
       style={{
@@ -23,6 +24,8 @@ const HelloWorldApp = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
+        <Text>You clicked {count} times</Text>
+        <Button onPress={()=>setCount(count+1)} title="Click me!"/>
         <Greeting name='Rexxar'/>
         <Greeting name='Jaina'/>
         <Greeting name='Valeera'/>
